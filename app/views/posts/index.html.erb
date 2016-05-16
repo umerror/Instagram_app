@@ -1,8 +1,9 @@
 
 <% @posts.each do |x| %>
-<div class="white">
-<%= image_tag x.image.url(:medium)%>
+<div class="white">	
+<%= image_tag x.image.url(:medium) %>
 <p><%= x.created_at.strftime("%B, %d, %Y") %></p>
+
 <br>
 <%= x.description %>
 <p><%= x.created_at.strftime("%B, %d, %Y") %></p>
