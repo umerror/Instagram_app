@@ -2,10 +2,10 @@
 <% @posts.each do |x| %>
 <div class="white">	
  <%= link_to image_tag(x.image.url(:medium)), post_path(x)%>
-<p>Published <%= time_ago_in_words(x.created_at)%> ago</p>
+<p>Published <%= time_ago_in_words(x.created_at)%> ago by <%=x.user.email%>  </p>
 
 <br>
 <%= x.description %>
-<p><%= time_ago_in_words(x.created_at)%> ago</p>
+<p><%= time_ago_in_words(x.created_at)%> ago by <%=x.user.email%></p>
 </div>
 <% end 	%>
