@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
 
-get '/posts/:id/edit', to: 'posts#edit'
+
 
 
 
