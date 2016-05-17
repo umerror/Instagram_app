@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   get 'users/new'
 
 
-  root 'posts#index'
-  resources :posts
+  root 'posts#index' 
   devise_for :users
+   resources :posts do 
+    resources :comments
+  end
 
 
 

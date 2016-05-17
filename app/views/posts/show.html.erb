@@ -2,15 +2,20 @@
 <div class ="white">
 	<% if current_user %>
 		| <%= link_to "Edit", edit_post_path(@post) %>
-		| <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you Sure?'}%>
-
-	<% end %>
+		| <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you Sure?"}%>
+	<% end %>	
 <%= image_tag(@post.image.url(:medium))%>
 <br>
 <%= @post.description %>
-	<div>
+<div>
+		<h2>Number of Comments #<%= @post.comments.count %> </h2>
+		<%= render @post.comments %>
+		<h3> Reply to post </h3>
+		<%= render "/comments/form" %>
+	</div>
+<div>
 		<%if !user_signed_in?%>
-		<p>Log in to make changes to this post</p>
+		<p>Log in to make changes and post comments </p>
 		<% end %> 
 	</div>
 </div>
