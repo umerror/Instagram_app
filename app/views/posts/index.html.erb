@@ -6,7 +6,7 @@
  	<%= link_to image_tag(x.image.url(:medium)), post_path(x)%>
 <p class="description">Description:</p>
 	<h4><%= x.description %></h4>
-<p><%= time_ago_in_words(x.created_at)%> ago by <%=x.user.email%></p>
+
 </div>
 <% end 	%>
 
